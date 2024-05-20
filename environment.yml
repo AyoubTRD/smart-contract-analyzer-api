@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - Flask
+  - flask-cors
 variables:
 prefix:
 platforms:

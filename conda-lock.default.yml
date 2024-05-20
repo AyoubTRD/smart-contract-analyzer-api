@@ -13,22 +13,22 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 65c422d2941f96429087f609b138870f23f20ff47f3c6b89e7cfa2e0a6977444
-    win-64: 172989abb21f1e28d7a3069117ea90d86d351364b93f5191dbfe2129ea544c7a
-    osx-arm64: eab8c4ae6e396e30743af237adda73a758bf057507a0913287d2ddaf3b6abc44
-    osx-64: 8d99aea7a7d26c2e7fec431d3147734b2d293415f7cbdc8ed15f7aad91024cc2
+    linux-64: d10b1747bbfdfa5b3bf3450c0cd24d84a26053a7a88399c9862b4bd102688aed
+    win-64: 549d94d74f9efeb87926e8021ec269e31bb88e87440ad8b2277f446c3f77a93f
+    osx-arm64: 3eeef7421abe30d5a52987fed85777193953c0b0d04163d63432285fd058c22c
+    osx-64: b880276baf1ad7822f48e9895bd027be8ca9fd2731e8214f5a0e720696e50bf3
   channels:
   - url: defaults
     used_env_vars: []
   platforms:
   - linux-64
-  - win-64
-  - osx-arm64
   - osx-64
+  - osx-arm64
+  - win-64
   sources:
   - environment.yml
   time_metadata:
-    created_at: '2024-05-19T16:01:25Z'
+    created_at: '2024-05-20T20:12:58Z'
 package:
 - name: _libgcc_mutex
   version: '0.1'
@@ -318,6 +318,62 @@ package:
   hash:
     md5: b97a2b6f81e8aed7d85e54ca89f0eafd
     sha256: 5f26ed1905ca5d7ca7ee20be585b6d0ede2f421d8481463dda4fd1a9e560a25d
+  category: main
+  optional: false
+- name: flask-cors
+  version: 3.0.10
+  manager: conda
+  platform: linux-64
+  dependencies:
+    flask: '>=0.9'
+    python: ''
+    six: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/flask-cors-3.0.10-pyhd3eb1b0_0.conda
+  hash:
+    md5: 953dc92b210154cc122db5caf2a2baf6
+    sha256: c02e4902bf5c2d9434149f74d6f9a54ffb65a9d1e15b9c4fc075345516e17e19
+  category: main
+  optional: false
+- name: flask-cors
+  version: 3.0.10
+  manager: conda
+  platform: osx-64
+  dependencies:
+    flask: '>=0.9'
+    python: ''
+    six: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/flask-cors-3.0.10-pyhd3eb1b0_0.conda
+  hash:
+    md5: 953dc92b210154cc122db5caf2a2baf6
+    sha256: c02e4902bf5c2d9434149f74d6f9a54ffb65a9d1e15b9c4fc075345516e17e19
+  category: main
+  optional: false
+- name: flask-cors
+  version: 3.0.10
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    flask: '>=0.9'
+    python: ''
+    six: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/flask-cors-3.0.10-pyhd3eb1b0_0.conda
+  hash:
+    md5: 953dc92b210154cc122db5caf2a2baf6
+    sha256: c02e4902bf5c2d9434149f74d6f9a54ffb65a9d1e15b9c4fc075345516e17e19
+  category: main
+  optional: false
+- name: flask-cors
+  version: 3.0.10
+  manager: conda
+  platform: win-64
+  dependencies:
+    flask: '>=0.9'
+    python: ''
+    six: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/flask-cors-3.0.10-pyhd3eb1b0_0.conda
+  hash:
+    md5: 953dc92b210154cc122db5caf2a2baf6
+    sha256: c02e4902bf5c2d9434149f74d6f9a54ffb65a9d1e15b9c4fc075345516e17e19
   category: main
   optional: false
 - name: itsdangerous
@@ -813,6 +869,54 @@ package:
   hash:
     md5: 8e3d8eb62e32065d41fad9a83a901254
     sha256: 0399187fd09fc52bfac1b67b3cdef33faa76a75213ff932d9fcb079238dd8584
+  category: main
+  optional: false
+- name: six
+  version: 1.16.0
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/six-1.16.0-pyhd3eb1b0_1.conda
+  hash:
+    md5: 34586824d411d36af2fa40e799c172d0
+    sha256: 71c97b4ddc3d19ed41bfa1a2d40f620f96b4d46f097dc48ab115b36640f7df0a
+  category: main
+  optional: false
+- name: six
+  version: 1.16.0
+  manager: conda
+  platform: osx-64
+  dependencies:
+    python: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/six-1.16.0-pyhd3eb1b0_1.conda
+  hash:
+    md5: 34586824d411d36af2fa40e799c172d0
+    sha256: 71c97b4ddc3d19ed41bfa1a2d40f620f96b4d46f097dc48ab115b36640f7df0a
+  category: main
+  optional: false
+- name: six
+  version: 1.16.0
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    python: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/six-1.16.0-pyhd3eb1b0_1.conda
+  hash:
+    md5: 34586824d411d36af2fa40e799c172d0
+    sha256: 71c97b4ddc3d19ed41bfa1a2d40f620f96b4d46f097dc48ab115b36640f7df0a
+  category: main
+  optional: false
+- name: six
+  version: 1.16.0
+  manager: conda
+  platform: win-64
+  dependencies:
+    python: ''
+  url: https://repo.anaconda.com/pkgs/main/noarch/six-1.16.0-pyhd3eb1b0_1.conda
+  hash:
+    md5: 34586824d411d36af2fa40e799c172d0
+    sha256: 71c97b4ddc3d19ed41bfa1a2d40f620f96b4d46f097dc48ab115b36640f7df0a
   category: main
   optional: false
 - name: sqlite
