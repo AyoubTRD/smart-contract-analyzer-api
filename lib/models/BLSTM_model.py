@@ -1,9 +1,9 @@
 import tensorflow as tf
-from tensorflow.keras.preprocessing.text import Tokenizer  # type: ignore
 from tensorflow.keras.preprocessing.sequence import pad_sequences  # type: ignore
-from lib.analysis.analysis import Analysis
-from lib.models.base_model import BaseModel
+from tensorflow.keras.preprocessing.text import Tokenizer  # type: ignore
 from lib.vulnerabilites.vulnerability import Vulnerability
+from lib.models.base_model import BaseModel
+from lib.analysis.analysis import Analysis
 
 
 class BLSTMModel(BaseModel):

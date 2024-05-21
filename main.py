@@ -3,6 +3,8 @@ from lib.app import app
 app.run(port=8000, debug=True)
 
 
+# from lib.models.CNN_model import CNNModel
+
 # I was testing BLSTM model
 # from lib.models.BLSTM_model import BLSTMModel
 
