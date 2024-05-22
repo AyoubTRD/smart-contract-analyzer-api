@@ -9,40 +9,50 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/")
+@app.route(
+    "/",
+)
 @cross_origin()
 def home():
     return "<p>Hello world</p>"
 
-@app.route('/models')
+
+@app.route(
+    "/models",
+)
 @cross_origin()
 def get_available_models():
     return [model.toDict() for model in modelService.get_available_models()]
 
-@app.route('/analyze/sourcecode')
+
+@app.route("/analyze/sourcecode", methods=["POST"])
 @cross_origin()
 def analyze_sourcecode():
-    modelId = request.args.get('modelId')
-    sourcecode = request.args.get('sourcecode')
+    data = request.get_json()
+    modelId = data.get("modelId")
+    sourcecode = data.get("sourcecode")
 
     try:
         model = modelService.get_model_by_id(modelId)
     except Exception as e:
-        return { 'error': str(e) }, 404
+        return {"error": str(e)}, 404
 
     analysis = model.analyze(sourcecode)
     return analysis_service.enhance_analysis(analysis).toDict()
 
-@app.route('/analyze/bytecode')
+
+@app.route("/analyze/bytecode", methods=["POST"])
 @cross_origin()
 def analyze_bytecode():
-    modelId = request.args.get('modelId')
-    bytecode = request.args.get('bytecode')
+    data = request.get_json()
+
+    modelId = data.get("modelId")
+    bytecode = data.get("bytecode")
 
     try:
         model = modelService.get_model_by_id(modelId)
     except Exception as e:
-        return { 'error': str(e) }, 404
+        return {"error": str(e)}, 404
 
     analysis = model.analyze(bytecode)
     return analysis_service.enhance_analysis(analysis).toDict()
