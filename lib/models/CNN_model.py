@@ -76,6 +76,7 @@ class CNNModel(BaseModel):
 
         if vulnerabilites[0].name == 'safe': vulnerabilites = []
 
+
         return Analysis(
             model_used=self, analyzed_code=code, vulnerabilites=vulnerabilites
         )

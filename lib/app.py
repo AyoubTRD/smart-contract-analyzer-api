@@ -2,10 +2,12 @@ from flask import Flask, request
 from flask_cors import CORS, cross_origin
 
 from lib.models.model_service import modelService
+from lib.analysis.analysis_service import analysis_service
 
 app = Flask(__name__)
 
 CORS(app)
+
 
 @app.route("/")
 @cross_origin()
@@ -28,7 +30,8 @@ def analyze_sourcecode():
     except Exception as e:
         return { 'error': str(e) }, 404
 
-    return model.analyze(sourcecode).toDict()
+    analysis = model.analyze(sourcecode)
+    return analysis_service.enhance_analysis(analysis).toDict()
 
 @app.route('/analyze/bytecode')
 @cross_origin()
@@ -41,4 +44,5 @@ def analyze_bytecode():
     except Exception as e:
         return { 'error': str(e) }, 404
 
-    return model.analyze(bytecode).toDict()
+    analysis = model.analyze(bytecode)
+    return analysis_service.enhance_analysis(analysis).toDict()
