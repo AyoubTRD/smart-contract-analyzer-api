@@ -9,7 +9,6 @@ class ModelService:
     def __init__(self) -> None:
         self.models = [
             CNNModel(),
-            LSTMModel(),
             BLSTMModel(),
         ]
 

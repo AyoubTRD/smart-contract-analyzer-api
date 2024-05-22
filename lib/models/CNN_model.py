@@ -73,6 +73,9 @@ class CNNModel(BaseModel):
                 "1", labels[np.argmax(result[0])], labels[np.argmax(result[0])]
             ),
         ]
+
+        if vulnerabilites[0].name == 'safe': vulnerabilites = []
+
         return Analysis(
             model_used=self, analyzed_code=code, vulnerabilites=vulnerabilites
         )

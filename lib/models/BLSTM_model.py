@@ -39,10 +39,17 @@ class BLSTMModel(BaseModel):
         ]
         threshold = 0.5
         binary_predictions = [1 if pred > threshold else 0 for pred in predictions[0]]
-        vulnerabilites = []
+        vulnerabilites: list[Vulnerability] = []
+
+
         for i in range(len(binary_predictions)):
             if binary_predictions[i]:
                 vulnerabilites.append(Vulnerability(i, labels[i], labels[i]))
+
+        if binary_predictions[labels.index('safe')]:
+            if len(vulnerabilites) > 1:
+                vulnerabilites = list(filter(lambda v: v.name != 'safe', vulnerabilites))
+            else: vulnerabilites = []
 
         return Analysis(
             model_used=self, analyzed_code=source_code, vulnerabilites=vulnerabilites
