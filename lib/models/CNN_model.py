@@ -12,7 +12,7 @@ class CNNModel(BaseModel):
         super().__init__(
             id="cnn",
             name="CNN",
-            desc="Test",
+            desc="Convolutional Neural Network",
             supports_bytecode=True,
             supports_sourcecode=False,
         )

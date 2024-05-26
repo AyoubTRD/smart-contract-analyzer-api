@@ -9,7 +9,7 @@ from lib.analysis.analysis import Analysis
 class BLSTMModel(BaseModel):
     def __init__(self) -> None:
         super().__init__(
-            id="blstm", name="BLSTM", desc="BLSTM description", supports_sourcecode=True
+            id="blstm", name="BLSTM", desc="Bidirectional Long Short-Term Memory", supports_sourcecode=True
         )
 
     def Tokenize(self, source_code, max_sequence_length=512):
