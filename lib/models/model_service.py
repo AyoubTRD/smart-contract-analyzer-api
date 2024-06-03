@@ -1,6 +1,5 @@
 from lib.models.BLSTM_model import BLSTMModel
 from lib.models.CNN_model import CNNModel
-from lib.models.LSTM_model import LSTMModel
 from lib.models.base_model import BaseModel
 
 class ModelService:
